@@ -7,7 +7,6 @@
 html, body {
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 16px;
-    /*min-height: 100vh; */
     height: 100%;
 }
 
@@ -32,7 +31,7 @@ html, body {
 
 #top_header {
 	background: #888;
-	background-image: url('../images/bkgnd_Man_of_Steel.png');
+	background-image: url('../images/bkgnd_Man_of_Steel.PNG');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -52,7 +51,7 @@ html, body {
 
 #extras_header {
     background: #888;
-	background-image: url('../images/Hero_movie_bkgnd_1080p.jpg');
+	background-image: url('../images/Hero_movie_bkgnd_1080p.JPG');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -62,7 +61,7 @@ html, body {
 
 #projects_header {
     background: #888;
-	background-image: url('../images/bkgnd_forest_shadowhunters.png');
+	background-image: url('../images/bkgnd_forest_shadowhunters.PNG');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -95,16 +94,12 @@ html, body {
 	display: inline-block;
 	list-style-type: none;
 	padding: 5px 20px;
-	/*float: right;*/
 }
 
 .navbar ul li:hover {
-	/*color: red;*/
 	background: black;
 	transition: .5s;
 	border-radius: 15px;
-	/*border: 1px solid #1a0000;*/
-	/*font-size: 20px;*/
 }
 
 a {
@@ -114,7 +109,6 @@ a {
 }
 
 a:hover {
-	/*color: green;*/
     color: #665b5e;
     text-decoration: none;
 }
@@ -125,7 +119,6 @@ a:hover {
 
 #github_icon:hover {
     color: #9900ff;
-    /*transform: scale(110%);*/
     background: none;
     border: none;
 }
@@ -182,12 +175,6 @@ article {
      box-shadow: 0px 0px 76px 0px rgba(0, 0, 0, 0.47);
      background: #ccc;
  }
-
-/*article.post:hover {
-     transform: scale(1.02);
-     box-shadow: 0px 0px 76px 0px rgba(0, 0, 0, 0.47);
-     background: #cccccc;
- }*/
 
 .post_img {
     padding-right: 0px;
@@ -279,93 +266,7 @@ footer {
 .read_more_btn:hover {
     color: #00cc00;
 }
-/*
-.card {
-    display: grid;
-    grid-template-columns: 250px;
-    grid-template-rows: 100px 150px 40px;
-    grid-template-areas: "image" "text" "stats";
 
-    font-family: roboto;
-    border-radius: 18px;
-    background: white;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
-    text-align: left;
-
-    transition: 0.2s ease;
-    cursor: pointer;
-
-    margin: 25px;
-    */
-    /*border: 1px solid #1f1f1f;*/
-}
-/*
-.card-image {
-    grid-area: image;
-    background: #546778;
-    /*background: url("Sleepy_Hollow_title_card.jpg");
-    background-size: cover;
-    background-position: center center;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-}
-
-.card-image h4 {
-    text-align: center;
-    margin: 15px;
-}
-.card-text {
-     grid-area: text;
-     margin: 5px;
-     position: relative;
-}
-
-.card-text p {
-    color: #595959;
-    font-size: 15px;
-    font-weight: 300;
-    text-align: left;
-}
-
-.card-text button {
-    margin-left: 33%;
-    position: absolute;
-    bottom: 5px;
-}
-
-.card-stats {
-     grid-area: stats;
-     display: grid;
-     grid-template-columns: 1fr;
-     grid-template-rows: 1fr;
-     border-bottom-left-radius: 15px;
-     border-bottom-right-radius: 15px;
-     background: #292d32;
-}
-
-.card-stats .stat {
-    display: flex;
-    align-items: left;
-    justify-content: left;
-    flex-direction: column;
-    padding: 0px;
-    margin: 0px;
-    color: white;
-}
-
-.card-stats .stat .tools_text {
-    font-size: 10px;
-    font-weight: 100;
-    text-transform: uppercase;
-    margin-left: 10px;
-}
-
-.card:hover {
-    /*transform: scale(1.05);
-    border: 3px solid #00cc00;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
-}
-*/
 
 /* Extras Page */
 
