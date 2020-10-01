@@ -1,0 +1,374 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 16px;
+    /*min-height: 100vh; */
+    height: 100%;
+}
+
+.container-fluid {
+	width: 100%;
+    min-height: 100%;
+    padding: 0px;
+}
+
+.main_container {
+    overflow: auto;
+    padding-bottom: 50px;
+    background: #d9dad8;   /*#8d8e8a;*/  /*#d5d8dd;*/
+    padding-left: 15px;
+}
+
+.banner {
+	width: 100%;
+	height: 100%;
+    color: #fff;
+}
+
+#top_header {
+	background: #888;
+	background-image: url('../images/bkgnd_Man_of_Steel.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 200px;
+    min-width: 870px;
+}
+
+#about_header {
+	background: #888;
+	background-image: url('../images/los_angeles_dusk_1364x553.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 200px;
+    min-width: 870px;
+}
+
+#extras_header {
+    background: #888;
+	background-image: url('../images/Hero_movie_bkgnd_1080p.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 200px;
+    min-width: 870px;
+}
+
+#projects_header {
+    background: #888;
+	background-image: url('../images/bkgnd_forest_shadowhunters.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 200px;
+    min-width: 870px;
+}
+
+#logo {
+    float: left;
+    padding-left: 20px;
+    font-family: roboto;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#logo a {
+    color: 404040; /*black */
+}
+
+#logo a:hover {
+    color: #665b5e;
+}
+#main_nav {
+    margin: 0px 10px 10px 20px;
+    font-weight: bold;
+}
+
+.navbar ul li {
+	display: inline-block;
+	list-style-type: none;
+	padding: 5px 20px;
+	/*float: right;*/
+}
+
+.navbar ul li:hover {
+	/*color: red;*/
+	background: black;
+	transition: .5s;
+	border-radius: 15px;
+	/*border: 1px solid #1a0000;*/
+	/*font-size: 20px;*/
+}
+
+a {
+	color: #4f4a4a
+	padding: 5px 40px;
+	text-decoration: none;
+}
+
+a:hover {
+	/*color: green;*/
+    color: #665b5e;
+    text-decoration: none;
+}
+
+#github_icon {
+    margin-left: 0px;
+}
+
+#github_icon:hover {
+    color: #9900ff;
+    /*transform: scale(110%);*/
+    background: none;
+    border: none;
+}
+
+#github:hover {
+    color: #9900ff;
+    transition: color 0.8s;
+    transform: scale(130%);
+}
+
+.main_title {
+    text-align: center;
+    padding-top: 30px;
+    height: 60%;
+    font-size: 2.5em;
+}
+
+#subtitle_text {
+    text-align: center;
+    padding-top: 15px;
+    font-size: 1.1em;
+}
+
+section {
+    margin: 10px auto 50px auto;
+}
+
+#welcome_msg {
+    margin: 10px 20%;
+    text-align: center;
+}
+
+#about_me div img {
+    margin: 50px 0px 30px;
+}
+
+#recent_posts_title {
+    padding-left: 45px;
+    font-size: 1.25em;
+}
+
+article {
+     margin: 0px 5px 0px 5px;
+     padding: 8px 0px 8px 0px;
+ }
+
+.post_btn {
+    padding: 5px 0px;
+    text-align: left;
+}
+
+ .post_btn:hover {
+     transform: scale(1.02);
+     box-shadow: 0px 0px 76px 0px rgba(0, 0, 0, 0.47);
+     background: #ccc;
+ }
+
+/*article.post:hover {
+     transform: scale(1.02);
+     box-shadow: 0px 0px 76px 0px rgba(0, 0, 0, 0.47);
+     background: #cccccc;
+ }*/
+
+.post_img {
+    padding-right: 0px;
+    padding-left: 0px;
+    border-radius: 10px;
+}
+
+.post_img:hover {
+    border: 1px solid #888;
+}
+
+.post_title {
+    font-weight: bold;
+}
+
+.post_desc {
+    padding-left: 30px;
+}
+
+.read_more_btn a {
+    padding: 2px;
+    color: #404f5c;
+    transition: 0.4s;
+}
+
+.read_more_btn a:hover {
+    color: #00cc00;
+    text-decoration: none;
+}
+
+footer {
+    width: 100%;
+    padding-top: 15px;
+    position: relative;
+    height: 50px;
+    margin-top: -50px;
+    background: #888;
+    text-align: center;
+    color: #333;
+    font-size: 12px;
+    clear: both;
+}
+
+/* Projects Page */
+#proj_page_msg {
+    text-align: center;
+    margin: 15px;
+}
+
+.card_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*background: #292d32;*/
+}
+
+.blur img {
+    transition: all .7s ease;
+}
+
+.blur img:hover {
+    filter: blur(2px);
+}
+
+.card {
+    font-size: 0.8em;
+}
+.card:hover {
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+}
+
+.card-body {
+    position: relative;
+}
+
+.card-text {
+    margin-bottom: 48px;
+}
+
+.card-body a {
+    position: absolute;
+    bottom: 5px;
+}
+
+.card-footer {
+    font-size: 0.8em;
+}
+
+.read_more_btn:hover {
+    color: #00cc00;
+}
+/*
+.card {
+    display: grid;
+    grid-template-columns: 250px;
+    grid-template-rows: 100px 150px 40px;
+    grid-template-areas: "image" "text" "stats";
+
+    font-family: roboto;
+    border-radius: 18px;
+    background: white;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    text-align: left;
+
+    transition: 0.2s ease;
+    cursor: pointer;
+
+    margin: 25px;
+    */
+    /*border: 1px solid #1f1f1f;*/
+}
+/*
+.card-image {
+    grid-area: image;
+    background: #546778;
+    /*background: url("Sleepy_Hollow_title_card.jpg");
+    background-size: cover;
+    background-position: center center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.card-image h4 {
+    text-align: center;
+    margin: 15px;
+}
+.card-text {
+     grid-area: text;
+     margin: 5px;
+     position: relative;
+}
+
+.card-text p {
+    color: #595959;
+    font-size: 15px;
+    font-weight: 300;
+    text-align: left;
+}
+
+.card-text button {
+    margin-left: 33%;
+    position: absolute;
+    bottom: 5px;
+}
+
+.card-stats {
+     grid-area: stats;
+     display: grid;
+     grid-template-columns: 1fr;
+     grid-template-rows: 1fr;
+     border-bottom-left-radius: 15px;
+     border-bottom-right-radius: 15px;
+     background: #292d32;
+}
+
+.card-stats .stat {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: column;
+    padding: 0px;
+    margin: 0px;
+    color: white;
+}
+
+.card-stats .stat .tools_text {
+    font-size: 10px;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin-left: 10px;
+}
+
+.card:hover {
+    /*transform: scale(1.05);
+    border: 3px solid #00cc00;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+}
+*/
+
+/* Extras Page */
+
+
+
+/* MEDIA QUERIES */

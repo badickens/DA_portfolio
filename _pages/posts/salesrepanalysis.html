@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>2019-Nov-4:sales_rep_analysis</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width = device-width, initial-scale = 1" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700' rel='stylesheet' type='text/css'>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../css/post_styles.css" />
+    </head>
+    <body>
+        <div class="container-fluid">
+            <main id="main_rpt_container">
+                <header class="title">
+                    <div class="row">
+                        <h1 class="col-md-12">Sales Rep Data Analysis</h1>
+                    </div>
+                </header>
+                <section class="rpt_body">
+                    <h2><strong>OVERVIEW:</strong></h2>
+                    <div class="row">
+                        <ul>
+                            <li>This report will investigate a sales representative and revenue dataset.</li>
+                            <li>The focus on revenue generated, time periods of productivity, and most popular products sold.</li>
+                            <li>The key questions explored were:
+                                <ul>
+                                    <li>What is the total and % revenue per region?</li>
+                                    <li>What is the total revenue per year?</li>
+                                    <li>For each Sales Rep, what are their total revenues per region?</li>
+                                    <li>Which Sales Reps have the largest % of revenue for each of the regions?</li>
+                                    <li>Which quarter has the highest earnings?</li>
+                                    <li>What is the revenue per month for each year?</li>
+                                    <li>What are the top 3 products sold?</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <img class="col-md-5" src="../../images/posts/total_rev_x_region.png" />
+                        <img class="col-md-5" src="../../images/posts/all_salesRep_revenues.png" />
+                        <div class="col-md-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <img class="col-md-5" src="../../images/posts/total_rev_x_qtr.png" />
+                        <img class="col-md-5" src="../../images/posts/most_prods_sold.png" />
+                        <div class="col-md-1"></div>
+                    </div>
+                    <div class="row">
+                        <h2><strong>CONCLUSIONS:</strong></h2>
+                    </div>
+                    <div class="row">
+                        <h4>Analysis of the Sales Rep Data analysis has resulted in the following general observations:</h4>
+                    </div>
+                    <div class="row">
+                        <ul>
+                            <li>The vast majority of sales occur in the months of September and October.</li>
+                            <li>The West region has nearly double the total revenue of the East and South regions combined.</li>
+                            <li>The top 3 products (Bellen, Quad, and Sunbell were sold more than the remaining 4 products combined.</li>
+                            <li>2016 & 2017 were the most productive years out of three; the small quantity in 2015 may not be a reasonable comparison.</li>
+                    <!--    </ul>
+
+                            <ul>
+                                <li>Among the ~10,700 directors, Steven Spielberg was listed as having directed the most movies (25) among those with high revenues. He was followed by Clint Eastwood and Ridley Scott.</li>
+                            </ul>
+                            <ul>
+                                <li>Regarding the ~18,000 unique actors/cast listed, some general findings were:</li>
+                            <ul>
+                                <li>Harrison Ford (41 movies, ~8.9B), Tom Cruise (37 movies, ~8.8B), and Tom Hanks (46 movies, ~8.4B) were the top three male actors with the highest combined revenues of movies they each starred in. All three summing to ~26B.</li>
+                                <li>Cameron Diaz (38 movies, ~7B), Scarlette Johansson (32 movies, ~6B), and Sandra Bullock (34 movies, ~5.9B) were the top female actors with the highest combined revenues of movies each. All three summing to ~19B.</li>
+                                <li>The top 3 male actors with the most movies listed were Robert De Niro (72 movies, ~5.1B), Samuel L. Jackson (71 movies, ~7.1B), and Bruce Willis (62 movies, ~6.6B).</li>
+                                <li>The top 3 female actors with the most movies were Susan Sarandon (47 movies, ~1.2B), Julianne Moore (46 movies, ~2.4B), and Meryl Streep (44 movies, ~3.2B).</li>
+                            </ul>
+                        </ul> -->
+                    </div>
+                    <div class="row">
+                        <p class="col-md-12"><h4>See <a href="../detail_pages/sales-rep-data-analysis.html">this link</a>
+                        for a detailed look at the Jupyter Notebook data analysis.</h4></p>
+                    </div>
+                </section>
+            </main>
+        </div>
+        <div class="row"></div>
+        <footer id="main_footer">
+    		<p>&copy; <script>document.write(new Date().getFullYear());</script>, Data Analyst Journey; All Rights Reserved.</p>
+    	</footer>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    </body>
+</html>

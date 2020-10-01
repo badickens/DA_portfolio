@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BD Portfolio</title>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width = device-width, initial-scale = 1" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+</head>
+<body>
+    <div class="container-fluid">
+        <header id="top_header" class="banner">
+            <div class="row navbar">
+                <h5 id="logo"><a href="#">Bridget D.</a></h5>
+        		<ul id="main_nav">
+    			    <li><a href="_pages/about.html">About</a></li>
+    				<li><a href="_pages/projects.html">Projects</a></li>
+                    <li><a href="_pages/extras.html">Extras</a></li>
+                    <li id="github_icon">
+                        <a href="https://github.com/badickens/DA_Portfolio" target="_blank">
+                            <i id="github" class="fa fa-github fa-lg"></i>
+                        </a>
+                    </li>
+        		</ul>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="main_title">Data Analyst Portfolio</h1>
+                    <h4 id="subtitle_text">Yup</h4>
+                </div>
+            </div>
+        </header>
+        <main class="main_container">
+            <section class="row">
+                <div class="col-md-12">
+                    <p id="welcome_msg">Welcome to my Data Analyst Portfolio. It includes projects using various data analysis techniques.</p>
+                </div>
+            </section>
+            <section>
+                <h3 id="recent_posts_title">Recent Posts:</h3>
+                <article class="post">
+                    <div class="row post_btn">
+                        <div class="col-md-1"></div>
+                        <img class="col-md-4 post_img" src="images/movies_img.png" width=500, height=250 alt="a coil of movie film on black background"/>
+                        <div class="col-md-6 post_desc">
+                            <div class="post_title">Project 1: Investigate The Movie Database </div>
+                            <p>Investigate a dataset which contains information on ~10K movies released between 1960 and 2015. This investigation will focus on the popularity of various genres, directors, actors, and movie revenues. Through the process of data cleaning and EDA, several questions were explored through analysis and data visualizations.
+                            </p>
+                            <button class="read_more_btn"><a href="_pages/posts/moviedbanalysis.html" target="_blank">Read More</a></button>
+                        </div>
+                        <div class="col-md-1"></div>
+                    </div>
+                </article>
+                <article class="post">
+                    <div class="row post_btn">
+                        <div class="col-md-1"></div>
+                        <img class="col-md-4 post_img" src="images/DS_bkgnd_img1.png" width=500, height=250 alt="scattered dots on a mesh of strings"/>
+                        <div class="col-md-6 post_desc">
+                            <div class="post_title">Project 2: Sales Rep Data Analysis</div>
+                            <p>This report will investigate a sales representative and revenue dataset. Analysis includes focus on revenue generated, productivity, and most popular products sold.
+                            The analysis explores several questions to gain general business insights. For example, What is the total revenue per year? Which quarter has the highest earnings?
+                            Which Sales Reps have the largest % of revenue for each of the regions? What are the top 3 products sold?
+                            </p>
+                            <button class="read_more_btn"><a href="_pages/posts/salesrepanalysis.html" target="_blank">Read More</a></button>
+                        </div>
+                        <div class="col-md-1"></div>
+                    </div>
+                </article>
+                <article class="post">
+                    <div class="row post_btn">
+                        <div class="col-md-1"></div>
+                        <img class="col-md-4 post_img" src="images/DS_bkgnd_img16.png" width=500, height=250 alt="white keyboard keys"/>
+                        <div class="col-md-6 post_desc">
+                            <div class="post_title">Project 3: US Location Data - Phase 1</div>
+                            <p>The exercise of gathering data on US zip codes in order to make a resuable dataset. Information also city, county, state, type of zip code, and it's geolocation.
+                                Along with the data for each US state, this includes Washington DC, Puerto Rico, and a few codes of some of the remaining US territories. Phase 1 will focus on
+                                the process of gathering, cleaning, and storage into an excel file.
+                            </p>
+                            <button class="read_more_btn"><a href="_pages/posts/uslocationdata_1.html" target="_blank">Read More</a></button>
+                        </div>
+                        <div class="col-md-1"></div>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div> <!-- End of container-fluid -->
+
+    <footer id="main_footer">
+	    <p>&copy;<script>document.write(new Date().getFullYear());</script>, Data Analyst Journey; All Rights Reserved.</p>
+	</footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<!--<script src="js/main.js" type="text/javascript"></script> -->
+
+</body>
+</html>
