@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Sales Analysis Story</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width = device-width, initial-scale = 1" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700' rel='stylesheet' type='text/css'>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="../../css/font-awesome-4.7.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../css/post_styles.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/story_post_styles.css" />
+    </head>
+    <body>
+        <div class="container-fluid">
+            <main id="main_rpt_container">
+                <header class="title">
+                    <div class="row navbar">
+                        <h1 class="col-md-12">Sales Data Analysis Project</h1>
+						<ul id="story_nav">
+							<li class="active" id="portfolio"><a href="#">Portfolio</a></li>
+							<li id="resume"><a href="resume.html">Resume</a></li>
+							<li id="cvr_ltr"><a href="cvrletter.html">Cover Letter</a></li>
+						</ul>
+                    </div>
+                </header>
+                <section class="rpt_body">
+                    <h4>OVERVIEW:</h4>
+                    <div class="row">
+                        <ul>
+                            <li>This report will investigate a sales representative and revenue dataset.</li>
+                            <li>The focus is on revenue generated, time periods of productivity, and most popular products sold.</li>
+							<li>Tools Used: Excel, MySQL Server, Tableau</li>
+							<li>Dataset: sales csv file with ~10,000 records</li>
+                        </ul>
+                    </div>
+					<div class="row"></div>
+					<hr>
+                    <div class="row">
+                        <div class="column">
+							<img src="../../images/posts/Sales Analysis 2_Dashbrd1.png" alt="image of Tableau main interactive dashboard with monthly and quarterly sales graphs"/>
+							<img src="../../images/posts/salesRep_data_xls_file.png" alt="image of Sales representative sales data in an Excel file"/>
+							<img src="../../images/posts/Top_Prods_Sold_Dashboard.png" alt="image of Tableau interactive dashboard for top products sold"/>
+                        </div>
+						<div class="column">
+							<img src="../../images/posts/detail_sales_all.xlsx.png" alt="image of detail sales information in Excel file"/>
+							<img src="../../images/posts/ER_Diagram.png" alt="image of Entity Relationship Diagram or ERD for the sales database"/>
+							<img src="../../images/posts/SalesRep_Sales_by_Prods.png" alt="image of Tableau interactive dashboard for sales representative sales by product"/>
+						</div>
+					</div>
+                    
+					<hr>
+                    <div class="row">
+                        <h4>Business Request & User Stories</h4>
+						<p>The business request for this data analysis is a sales report for sales manager.
+						The following user stories are defined to ensure the sales performance is meeting 
+						the business requirements.
+						</p>
+						<table>
+							<tr>
+								<th>#</th>
+								<th>As a (role)</th>
+								<th>I want (request/demand)</th>
+								<th>So that I (user value)</th>
+								<th>Acceptance Criteria</th>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>Regional Manager</td>
+								<td>The total and % revenue per region.</td>
+								<td>Can get revenue relationship between regions.</td>
+								<td>Detailed Sales Dashboard</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Sales Manager</td>
+								<td>The total revenue per year.</td>
+								<td>Can get yearly sales progress.</td>
+								<td>Detailed Sales Dashboard</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>Regional Manager</td>
+								<td>Each Sales Rep's total revenues per region.</td>
+								<td>Find the best Sales Reps for each region.</td>
+								<td>Sales Representative Dashboard</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>Regional Manager</td>
+								<td>To know which Sales Reps with most (%) revenue for each region.</td>
+								<td>Find Reps with highest sales for their regions.</td>
+								<td>Sales Representative Dashboard</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>Sales Representative</td>
+								<td>To know the highest quarterly earnings.</td>
+								<td>Get an quick overview of sales revenue.</td>
+								<td>General Sales Analysis Dashboard</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>Sales Manager</td>
+								<td>The revenue per month for each year.</td>
+								<td>Can get the monthly sales trends.</td>
+								<td>General Sales Analysis Dashboard</td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>Sales Representative</td>
+								<td>The top 3 products sold.</td>
+								<td>Can list the top selling products and their Sales Reps.</td>
+								<td>Top Products and SalesRep Sales by Product Dashboards</td>
+							</tr>
+						</table>
+                    </div>
+					<hr> 
+					<div class="row">
+						<h4>Data Cleansing & Transformation (SQL)</h4>
+						<p>To create the necessary data model for doing the analysis and fulfilling 
+						the business needs defined in the user stories and the following tables were 
+						extracted using SQL.
+						</p>
+						<br>
+						<p>One data source (sales budgets) were provided in Excel csv format and were 
+						connected in the data model in a later step in the process. 						
+						</p>
+						<br> 
+						<p>Below are the SQL statements for cleaning and transforming the necessary data.
+						</p>
+					</div>
+					<div class="row">
+						<p class="sql_qs">Product Sales SQL View:</p>
+						<pre class="col-md-12">
+
+  CREATE VIEW product_sales AS 
+    SELECT s.Date AS Date,
+      s.Product_ID AS Prod_ID, 
+      p.Product AS Name, 
+      p.Color AS Color, 
+      p.Region AS Region, 
+      s.Units AS Units,
+      p.Unit_Price AS Price, 
+      SUM(s.Units * p.Unit_Price) AS Revenue
+    FROM 
+      products AS p
+    INNER JOIN sales AS s
+      ON p.ID = s.Product_ID
+    GROUP BY 
+      s.Product_ID
+    ORDER BY 
+      s.Date DESC;
+
+						</pre>
+					</div>
+				
+					<div class="row">
+						<p class="sql_qs">Region Sales SQL View:</p>
+						<pre class="col-md-12">
+	
+  CREATE VIEW region_sales AS 
+    SELECT 
+      p.Region AS Region, 
+      SUM(s.Units * p.Unit_Price) AS Revenue
+    FROM 
+      products AS p
+    INNER JOIN sales AS s
+      ON p.ID = s.Product_ID
+    GROUP BY 
+      Region;
+						</pre>
+					</div>
+		
+					
+					<div class="row">
+						<p class="sql_qs">Total Sales SQL View:</p>
+						<pre class="col-md-12">
+	
+  CREATE VIEW total_sales AS 
+    SELECT s.Date AS Date, 
+      s.Product_ID AS Prod_ID,
+      p.Product AS Name,
+      s.Units AS Units,
+      p.Unit_Price AS Price, 
+      SUM(s.Units * p.Unit_Price) AS Revenue 
+    FROM 
+      products AS p 
+    INNER JOIN sales AS s 
+      ON p.ID = s.Product_ID; 
+						</pre>
+					</div>
+
+				
+					<div class="row">
+						<p class="sql_qs">Detail Sales SQL View:</p>
+						<pre class="col-md-12">
+		  
+  CREATE VIEW detail_sales AS 
+    SELECT 
+      Date,
+      YEAR(s.DATE) AS Year,
+      MONTH(s.Date) AS Month,
+      DAY(s.Date) AS Day,
+      DAYNAME(s.Date) AS Weekday,
+      s.Product_ID AS Prod_ID, 
+      p.Product AS Name, 
+      p.Color AS Color, 
+      p.Region AS Region, 
+      reps.SalesRep AS SalesRep,
+      s.Units AS Units,
+      p.Unit_Price AS Price,
+      (s.Units * p.Unit_Price) AS Extd_Price	
+    FROM
+      products AS p 
+    INNER JOIN sales AS s 
+      ON p.ID = s.Product_ID
+    LEFT JOIN salesreps AS reps
+      ON s.SalesRep_ID = reps.ID;
+						</pre>
+					</div>
+		
+				
+					<div class="row">
+						<p class="sql_qs">What is the total and % revenue per region?:</p>
+						<pre class="col-md-12">
+
+  SELECT 
+    Region, 
+    Revenue, 
+    TRUNCATE((Revenue/(SELECT Revenue FROM total_sales))* 100, 1) AS Prcnt_Rev
+  FROM 
+    region_sales;
+						</pre>
+					</div>
+		
+			
+					<div class="row">
+						<p class="sql_qs">What is the total revenue per year?:</p>
+						<pre class="col-md-12">
+
+  SELECT 
+    YEAR(s.Date) AS Year, 
+    SUM(s.Units * p.Unit_Price) AS Total_Revenue
+  FROM 
+    products AS p
+  INNER JOIN sales AS s
+    ON p.ID = s.Product_ID
+  GROUP BY 
+    Year
+  ORDER BY 
+    Total_Revenue DESC;
+						</pre>
+					</div>
+		
+				
+					<div class="row">
+						<p class="sql_qs">For each Sales Rep, what are their total revenues per region?:</p>
+						<pre class="col-md-12">
+
+  SELECT 
+    SalesRep, 
+    Region, 
+    SUM(Extd_Price) AS Revenue
+  FROM 
+    detail_sales
+  GROUP BY 
+    SalesRep, 
+    Region
+  ORDER BY 
+    SalesRep;
+						</pre>
+					</div>
+		
+		
+					<div class="row">
+						<p class="sql_qs">Which Sales Reps have the largest % of revenue for each of the regions?:</p>
+						<pre class="col-md-12">
+
+  SELECT 
+    SalesRep, 
+    Region, 
+    SUM(Extd_Price) AS Total_Revenue,
+    CASE 
+      WHEN Region = 'East' 
+        THEN (SUM(Extd_Price) / (SELECT Revenue FROM region_sales WHERE Region = 'South'))
+      WHEN Region = 'South' 
+        THEN (SUM(Extd_Price) / (SELECT Revenue FROM region_sales WHERE Region = 'South'))
+      WHEN Region = 'West' 
+        THEN (SUM(Extd_Price) / (SELECT Revenue FROM region_sales WHERE Region = 'West'))
+    END AS Prcnt_Revenue		
+  FROM 
+    detail_sales
+  GROUP BY 
+    Region, 
+    SalesRep
+  ORDER BY 
+    Prcnt_Revenue DESC;
+						</pre>
+					</div>
+		
+				
+					<div class="row">
+						<p class="sql_qs">Which quarter has the highest earnings? :</p>
+						<pre class="col-md-12">
+
+  SELECT 
+    QUARTER(Date) AS QTR,
+    SUM(Extd_Price) AS QTR_Revenue
+  FROM 
+    detail_sales
+  GROUP BY 
+    QTR 
+  ORDER BY 
+    QTR_Revenue DESC;
+						</pre>
+					</div>
+		
+			
+					<div class="row">
+						<p class="sql_qs">What is the revenue per month for each year?:</p>
+						<pre class="col-md-12">
+
+  SELECT 
+    Year,
+    MONTHNAME(Date) AS Month,
+    SUM(Extd_Price) AS Rev_Per_Month 
+  FROM 
+    detail_sales 
+  GROUP BY 
+    Year, Month 
+  ORDER BY 
+    Year, 
+    Rev_Per_Month DESC;
+						</pre>
+					</div>
+
+				
+					<div class="row">
+						<p class="sql_qs">What are the top 3 products sold?:</p>
+						<pre class="col-md-12">
+
+  SELECT 
+    Prod_ID,
+    Name,
+    Color,
+    SUM(Extd_Price) AS Total_Rev 
+  FROM 
+    detail_sales 
+  GROUP BY 
+    Prod_ID
+  ORDER BY 
+    Total_Rev DESC
+  LIMIT 3;
+						</pre>
+					</div>
+					
+					<hr> 
+					<div class="row">
+						<h4>Data Model</h4>
+						<p>Below is a screenshot of the data model after cleansing and table 
+						preparation. The ERD was generated using PowerPoint.
+						</p>
+						<p>This data model shows the table relationships and the generated SQL views.
+						</p>
+						<br>
+						<p>One data source (sales budgets) were provided in Excel csv format and were 
+						connected in the data model in a later step in the process. 						
+						</p>
+						<br> 
+						<p>Below are the SQL statements for cleaning and transforming the necessary data.
+						</p>
+					</div>
+					<div class="row">
+                        <div class="column">
+							<img src="../../images/posts/ER_Diagram.png" alt="image of Entity Relationship Diagram or ERD for the sales database"/>
+						</div>
+						<div class="column">
+							<img src="../../images/posts/ERD_Views.png" alt="image of Entity Relationship Diagram or ERD for SQL views generated from the sales database"/>
+						</div>
+                    </div>
+					
+					<hr>
+					<div class="row">
+						<h4>Sales Analysis Dashboard</h4>
+						<p>The finished sales analysis dashboard with one page works as a dashboard 
+						and overview, with two other pages focused on combining tables for necessary 
+						details and visualizations to show sales over time, per customers and per products.
+						</p>
+						<br>
+						<p>Click the picture to open the dashboard and try it out.</p>
+						<br> 
+						<p>Below are the SQL statements for cleaning and transforming the necessary data.
+						</p>
+					</div>
+					<div class="row">
+                        <div class="column to_Tableau">
+							<a target="blank" href="https://public.tableau.com/profile/bridget.dickens#!/vizhome/SalesAnalysis2_16183846064170/SalesAnalysis2Dashboard_1" title="Click to Go to Dashboard"><img src="../../images/posts/Sales Analysis 2_Dashbrd1.png" alt="image of Tableau main interactive dashboard with monthly and quarterly sales graphs"/></a>
+                        </div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="column to_Tableau"> 
+							<a target="blank" href="https://public.tableau.com/profile/bridget.dickens#!/vizhome/SalesAnalysis2_16183846064170/TopProductsDashboard" title="Click to Go to Dashboard"><img src="../../images/posts/Top_Prods_Sold_Dashboard.png" alt="image of Tableau interactive dashboard for top products sold"/></a>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="column to_Tableau"> 
+							<a target="blank" href="https://public.tableau.com/profile/bridget.dickens#!/vizhome/SalesAnalysis2_16183846064170/SalesDetailsDashboard" title="Click to Go to Dashboard"><img src="../../images/posts/Sales_Details_Dashboard.png" alt="image of Tableau interactive dashboard for regional yearly sales per product"/></a>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="column to_Tableau"> 
+							<a target="blank" href="https://public.tableau.com/profile/bridget.dickens#!/vizhome/SalesAnalysis2_16183846064170/SalesStatsDashboard" title="Click to Go to Dashboard"><img src="../../images/posts/Sales_Stats_Dashboard.png" alt="image of Tableau dashboard of sales statistics, moving averages, % differences, and running total"/></a>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="column to_Tableau"> 
+							<a target="blank" href="https://public.tableau.com/profile/bridget.dickens#!/vizhome/SalesAnalysis2_16183846064170/SalesRepDashboard" title="Click to Go to Dashboard"><img src="../../images/posts/SalesRep_Sales.png" alt="image of Tableau interactive dashboard for sales representative total sales and sales per region"/></a>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="column to_Tableau"> 
+							<a target="blank" href="https://public.tableau.com/profile/bridget.dickens#!/vizhome/SalesAnalysis2_16183846064170/SalesRepProductDashboard" title="Click to Go to Dashboard"><img src="../../images/posts/SalesRep_Sales_by_Prods.png" alt="image of Tableau interactive dashboard for sales representative sales by product"/></a>
+						</div>
+					</div>
+					<hr>
+					<br>
+	
+				</section>
+            </main>
+        </div>
+
+
+        <div class="row"></div>
+        <footer id="main_footer">
+    		<p>&copy; <script>document.write(new Date().getFullYear());</script>, Data Analyst Journey; All Rights Reserved.</p>
+    	</footer>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    </body>
+</html>
