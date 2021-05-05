@@ -73,20 +73,21 @@ html, body {
 
 #logo {
     float: left;
-    padding-left: 12px;
+    padding-left: 15px;
     font-family: roboto;
-    font-size: 1.1em;
     text-transform: uppercase;
     font-weight: bold;
 }
 
 #logo a {
     color: 404040; /*black */
+	font-size: 2em;
 }
 
 #logo a:hover {
     color: #665b5e;
 }
+
 #main_nav {
     margin: 0px 10px 10px 20px;
     font-weight: bold;
@@ -288,13 +289,12 @@ footer {
 		font-size: 14px;
 	}
 	
-	#top_header, #about_header, #projects_header, #extras_header {
-		min-width: 375px;
+	.navbar ul li {
+		padding: 5px 15px 5px 5px;
 	}
 
-	#logo {
-		padding-left: 5px;
-		font-size: 1.0em;
+	#top_header, #about_header, #projects_header, #extras_header {
+		min-width: 375px;
 	}
 	
 	#main_nav {
@@ -320,6 +320,10 @@ footer {
 	
 	.navbar {
 		font-size: 16px;
+	}
+	
+	.navbar ul li {
+		padding: 5px 20px;
 	}
 	
 	#top_header, #about_header, #projects_header, #extras_header {
