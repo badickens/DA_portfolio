@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar { display: none; }
+
 html, body {
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 16px;
@@ -36,7 +38,7 @@ html, body {
     background-position: center center;
     background-repeat: no-repeat;
     min-height: 200px;
-    min-width: 870px;
+    min-width: 600px;
 }
 
 #about_header {
@@ -46,7 +48,7 @@ html, body {
     background-position: center center;
     background-repeat: no-repeat;
     min-height: 200px;
-    min-width: 870px;
+    min-width: 600px;
 }
 
 #extras_header {
@@ -56,7 +58,7 @@ html, body {
     background-position: center center;
     background-repeat: no-repeat;
     min-height: 200px;
-    min-width: 870px;
+    min-width: 600px;
 }
 
 #projects_header {
@@ -66,12 +68,12 @@ html, body {
     background-position: center center;
     background-repeat: no-repeat;
     min-height: 200px;
-    min-width: 870px;
+    min-width: 600px;
 }
 
 #logo {
     float: left;
-    padding-left: 20px;
+    padding-left: 12px;
     font-family: roboto;
     font-size: 1.1em;
     text-transform: uppercase;
@@ -170,7 +172,7 @@ article {
     text-align: left;
 }
 
- .post_btn:hover {
+.post_btn:hover {
      transform: scale(1.02);
      box-shadow: 0px 0px 76px 0px rgba(0, 0, 0, 0.47);
      background: #ccc;
@@ -275,11 +277,69 @@ footer {
 
 /********** MEDIA QUERIES **********/
 
-/*  Smaller devices (small phones, 425px and up) */
+/* Small devices (smaller phones, 360px and up) */
+@media screen and (min-width: 360px) {
+	.col-lg-2 {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+	
+	.navbar {
+		font-size: 14px;
+	}
+	
+	.navbar ul li {
+		padding-left: 0px;
+	}
+	
+	#top_header, #about_header, #projects_header, #extras_header {
+		min-width: 375px;
+	}
+
+	#logo {
+		padding-left: 5px;
+		font-size: 1.0em;
+	}
+	
+	#main_nav {
+		margin-left: 3px;
+	}
+	
+	.main_title {
+		font-size: 1.8em;
+	}
+	
+	#left-of-gh-icon {
+		padding-right: 10px;
+	}
+}
+
+
+/* Smaller devices (small phones, 425px and up) */
 @media screen and (min-width: 425px) {
 	.col-lg-2 {
 		flex: 0 0 100%;
 		max-width: 100%;
+	}
+	
+	.navbar {
+		font-size: 16px;
+	}
+	
+	.navbar ul li {
+		padding: 5px 10px;
+	}
+	
+	#top_header, #about_header, #projects_header, #extras_header {
+		min-width: 450px;
+	}
+
+	.main_title {
+		font-size: 2.0em;
+	}
+	s
+	#left-of-gh-icon {
+		padding-right: 20px;
 	}
 }
 
@@ -289,6 +349,22 @@ footer {
 	.col-lg-2 {
 		flex: 0 0 50%;
 		max-width: 50%;
+	}
+	
+	.navbar ul li {
+		padding: 5px 20px;
+	}
+	
+	#top_header, #about_header, #projects_header, #extras_header {
+		min-width: 450px;
+	}
+	
+	#logo {
+		padding-left: 10px;
+	}
+	
+	.main_title {
+		font-size: 2.5em;
 	}
 }
 
@@ -309,7 +385,7 @@ footer {
 		max-width: 20%;
 	}
 }
-}
+
 
 
 
