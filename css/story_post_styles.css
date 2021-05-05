@@ -117,6 +117,11 @@ footer {
     clear: both;
 }
 
+#main_footer {
+	font-size: 1.1em;
+}
+
+
 /*   Resume   */
 
 .resume_body div img {
@@ -356,7 +361,7 @@ caption {
 
 /*  Smaller devices (small phones, up to 450px) */
 @media screen and (max-width: 450px) {
-		.title h1 {
+	.title h1 {
 		font-size: 28px;
 	}
 	
@@ -373,6 +378,10 @@ caption {
 		margin-left: 2px;
 		margin-right: 2px;
 		font-size: 16px;
+	}
+	
+	#main_footer {
+		font-size: 0.9em;
 	}
 }
 
