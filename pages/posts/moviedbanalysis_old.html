@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
-        <meta charset="utf-8">
+        <meta charset="utf-8" />
         <title>2019-Jan-12:movie_db_analysis</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width = device-width, initial-scale = 1" />
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet" type="text/css" />
 
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
 
-        <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css" />
-        <link rel="stylesheet" type="text/css" href="../../css/post_styles.css" />
+        <link rel="stylesheet" type="text/css" href="../../css/font-awesome-4.7.0/css/font-awesome.min.css" />
+        <!--<link rel="stylesheet" type="text/css" href="../../css/post_styles.css" /> --> 
     </head>
     <body>
         <div class="container-fluid">
@@ -55,33 +55,31 @@
                         <h4>Analysis of The Movie Database (TMDb) has resulted in the following findings:</h4>
                         <p>This investigation focused on the most detailed attributes available in the dataset - actors, directors, and genres that could still gleam potentially interesting information. Note: No other sources were used to verify or suppliment the data from the TMDb dataset.
                         </p>
-                        <p>There were some limitations on the scope of this analysis during the exploration of the dataset. This included missing actual revenues values,  and missing production company references. Production company information was not included among the detailed attributes since there was too much missing to deem it useful for comparison. Overall, half of the information per movie was for those released between 2006 and 2015.
+                        <p>There were some limitations on the scope of this analysis during the exploration of the dataset. This included missing actual revenues values, and missing production company references. Production company information was not included among the detailed attributes since there was too much missing to deem it useful for comparison. Overall, half of the information per movie was for those released between 2006 and 2015.
                             The following cursory observations were made during this investigation:
                         </p>
                     </div>
                     <div class="row">
-                        <ul>
-                            <li>The predominent genre description for movies released from 1960 through 2015 within this dataset was Drama, followed by Comedy.</li>
-                            <li>2156 movies listed had above average revenue ( >= ~40.3 Million )</li>
-                            <li>Half of the movies with above average revenues made more than ~114 Million</li>
-                            <li>Highest revenue was ~2.8 Billion (Avatar), directed by James Cameron</li>
-                        </ul>
-                            <ul>
-                                <li>Among the ~10,700 directors, Steven Spielberg was listed as having directed the most movies (25) among those with high revenues. He was followed by Clint Eastwood and Ridley Scott.</li>
-                            </ul>
-                            <ul>
-                                <li>Regarding the ~18,000 unique actors/cast listed, some general findings were:</li>
-                            <ul>
-                                <li>Harrison Ford (41 movies, ~8.9B), Tom Cruise (37 movies, ~8.8B), and Tom Hanks (46 movies, ~8.4B) were the top three male actors with the highest combined revenues of movies they each starred in. All three summing to ~26B.</li>
-                                <li>Cameron Diaz (38 movies, ~7B), Scarlette Johansson (32 movies, ~6B), and Sandra Bullock (34 movies, ~5.9B) were the top female actors with the highest combined revenues of movies each. All three summing to ~19B.</li>
-                                <li>The top 3 male actors with the most movies listed were Robert De Niro (72 movies, ~5.1B), Samuel L. Jackson (71 movies, ~7.1B), and Bruce Willis (62 movies, ~6.6B).</li>
-                                <li>The top 3 female actors with the most movies were Susan Sarandon (47 movies, ~1.2B), Julianne Moore (46 movies, ~2.4B), and Meryl Streep (44 movies, ~3.2B).</li>
-                            </ul>
+						<ul>
+							<li>The predominent genre description for movies released from 1960 through 2015 within this dataset was Drama, followed by Comedy.</li>
+							<li>2156 movies listed had above average revenue ( >= ~40.3 Million )</li>
+							<li>Half of the movies with above average revenues made more than ~114 Million</li>
+							<li>Highest revenue was ~2.8 Billion (Avatar), directed by James Cameron</li>
+							<li>Among the ~10,700 directors, Steven Spielberg was listed as having directed the most movies (25) among those with high revenues. He was followed by Clint Eastwood and Ridley Scott.</li>
+						</ul>
+						<ul>
+							<li>Regarding the ~18,000 unique actors/cast listed, some general findings were:
+								<ul>
+									<li>Harrison Ford (41 movies, ~8.9B), Tom Cruise (37 movies, ~8.8B), and Tom Hanks (46 movies, ~8.4B) were the top three male actors with the highest combined revenues of movies they each starred in. All three summing to ~26B.</li>
+									<li>Cameron Diaz (38 movies, ~7B), Scarlette Johansson (32 movies, ~6B), and Sandra Bullock (34 movies, ~5.9B) were the top female actors with the highest combined revenues of movies each. All three summing to ~19B.</li>
+									<li>The top 3 male actors with the most movies listed were Robert De Niro (72 movies, ~5.1B), Samuel L. Jackson (71 movies, ~7.1B), and Bruce Willis (62 movies, ~6.6B).</li>
+									<li>The top 3 female actors with the most movies were Susan Sarandon (47 movies, ~1.2B), Julianne Moore (46 movies, ~2.4B), and Meryl Streep (44 movies, ~3.2B).</li>
+								</ul>
+							</li>
                         </ul>
                     </div>
                     <div class="row">
-                        <p class="col-md-12"><h4>See <a href="../detail_pages/investigate-movie-db-report_rev3.html">this link</a>
-                        for a detailed look at the Jupyter Notebook data analysis.</h4></p>
+                        <p class="col-md-12"><h4>See <a href="../detail_pages/investigate-movie-db-report_rev3.html">this link</a>for a detailed look at the Jupyter Notebook data analysis.</h4></p>
                     </div>
                 </section>
             </main>

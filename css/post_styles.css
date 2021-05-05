@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 html, body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f1f1f1;
@@ -10,8 +11,8 @@ html, body {
 }
 
 .container-fluid {
-    width: 100%;
-    min-height: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
 #main_rpt_container {
@@ -26,6 +27,7 @@ header {
     color: #fff;
     padding: 20px;
 }
+
 header div h1 {
     font-size: 48px;
     /*margin-bottom: 30px;*/
@@ -65,3 +67,28 @@ footer {
     color: #333;
     clear: both;
 }
+
+
+/************ MEDIA QUERIES ************/
+
+/*  Smaller devices (small phones, up to 450px)  */
+@media screen and (max-width: 450px) {
+	.title h1 {
+		font-size: 38px;
+	}
+}
+
+
+/* Small/Medium devices (landscape phones/Tablets, up to 770px) */
+@media screen and (max-width: 770px) {
+	.title h1 {
+		font-size: 35px;
+	}
+	
+	.rpt_body {
+		font-size: 18px;
+	}
+}
+
+
+
