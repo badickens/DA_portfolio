@@ -288,10 +288,6 @@ footer {
 		font-size: 14px;
 	}
 	
-	.navbar ul li {
-		padding: 5px 0px;
-	}
-	
 	#top_header, #about_header, #projects_header, #extras_header {
 		min-width: 375px;
 	}
@@ -326,10 +322,6 @@ footer {
 		font-size: 16px;
 	}
 	
-	.navbar ul li {
-		padding: 5px 10px;
-	}
-	
 	#top_header, #about_header, #projects_header, #extras_header {
 		min-width: 450px;
 	}
@@ -350,11 +342,7 @@ footer {
 		flex: 0 0 50%;
 		max-width: 50%;
 	}
-	
-	.navbar ul li {
-		padding: 5px 20px;
-	}
-	
+
 	#top_header, #about_header, #projects_header, #extras_header {
 		min-width: 450px;
 	}
